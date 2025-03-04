@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket Monitoring Dashboard</title>
+    <link rel="stylesheet" href="../static/dashboard_page/css/style.css">
+</head>
+<body>
+>Apply Courses
+    <!-- Side Navbar -->
+    <div class="sidebar">
+        <h2>Supermarket</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+          
+            <li><a href="#">Inventory</a></li>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="/customer">Reports</a></li>
+            <li><a href="/customer">Customers</a></li>
+            <li><a href="/product">Products</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-navbar">
+            <h2> Monitoring</h2>
+            <div class="user-info">
+                <p>Welcome, {{ logger_data.first_name }} {{ logger_data.last_name }}</p>    
+                <a href="{% url 'index' %}">Logout</a>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-container">
+            <h3>Stock & Sales Overview</h3>
+            
+            <!-- Product Stock Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Stock</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Milk</td>
+                        <td>Dairy</td>
+                        <td>50</td>
+                        <td>$3.00</td>
+                    </tr>
+                    <tr>
+                        <td>Bread</td>
+                        <td>Bakery</td>
+                        <td>30</td>
+                        <td>$1.50</td>
+                    </tr>
+                    <tr>
+                        <td>Apple</td>
+                        <td>Fruits</td>
+                        <td>100</td>
+                        <td>$2.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Sales Table -->
+            <h3>Recent Sales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sale ID</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>Milk</td>
+                        <td>10</td>
+                        <td>$30.00</td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td>Bread</td>
+                        <td>5</td>
+                        <td>$7.50</td>
+                    </tr>
+                    <tr>
+                        <td>#003</td>
+                        <td>Apple</td>
+                        <td>20</td>
+                        <td>$40.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
